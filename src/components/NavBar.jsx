@@ -69,6 +69,7 @@ const NavBar = (props) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IcoButton>
@@ -134,6 +135,7 @@ const ListButton = styled(ListItemButton)`
   }
 `;
 const IcoButton = styled(IconButton)`
+  margin-left: 15px;
   margin-left: 25px;
   width: 55px;
   height: 55px;
