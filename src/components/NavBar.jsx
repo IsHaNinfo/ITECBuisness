@@ -59,16 +59,19 @@ const NavBar = (props) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" elevation={0} sx={{ backgroundColor: "white" }}>
-        <Toolbar>
-          <IconButton
+      <AppBar
+        component="nav"
+        elevation={0}
+        sx={{ backgroundColor: "white", height: "90px" }}
+      >
+        <Toolbar sx={{ mt: "10px" }}>
+          <IcoButton
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
-          </IconButton>
+          </IcoButton>
           <Typography
             variant="h6"
             component="div"
@@ -120,6 +123,7 @@ const HoverButton = styled(Button)`
   &:hover {
     background-color: #f71971 !important;
     border-radius: 1px 20px;
+    height: 46px;
   }
 `;
 
@@ -129,5 +133,15 @@ const ListButton = styled(ListItemButton)`
     border-radius: 0px 20px;
   }
 `;
-
+const IcoButton = styled(IconButton)`
+  margin-left: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 0px 20px;
+  &:hover {
+    background-color: #f71971 !important;
+    border-radius: 0px 20px;
+  }
+`;
+IconButton;
 export default NavBar;
