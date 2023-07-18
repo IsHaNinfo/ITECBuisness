@@ -36,7 +36,7 @@ const Slideshow = () => {
       alt: "Slide 2",
       buttonLabel: "Read More",
       buttonColor: "rgb(247, 25, 113)",
-      Title: "Outstanding Innovation services",
+      Title: "Outstanding  services",
       Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
@@ -129,13 +129,24 @@ const StyledTitle = styled("div")`
       top: -100%;
     }
     100% {
-      top: 30%;
+      top: 50%;
     }
   }
 
   @media only screen and (max-width: 768px) {
     font-size: 28px;
-    top: 30%;
+    top: 40%;
+    animation: ${({ active }) =>
+      active ? "slideDown 1s ease-in-out forwards" : "none"};
+
+    @keyframes slideDown {
+      0% {
+        top: -100%;
+      }
+      100% {
+        top: 50%;
+      }
+    }
   }
 `;
 
@@ -155,19 +166,30 @@ const StyledText = styled("div")`
       bottom: -10%;
     }
     100% {
-      bottom: 55%;
+      bottom: 35%;
     }
   }
 
   @media only screen and (max-width: 768px) {
     font-size: 14px;
-    bottom: 30%;
+    bottom: 20%;
+    animation: ${({ active }) =>
+      active ? "slideUp 1s ease-in-out forwards" : "none"};
+
+    @keyframes slideUp {
+      0% {
+        bottom: -10%;
+      }
+      100% {
+        bottom: 40%;
+      }
+    }
   }
 `;
 
 const StyledButton = styled("button")`
   position: absolute;
-  bottom: 390px;
+  bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -179,6 +201,9 @@ const StyledButton = styled("button")`
   &:hover {
     background-color: #464646 !important;
     border-radius: 0px 20px;
+  }
+  @media only screen and (max-width: 768px) {
+    bottom: 10%;
   }
 `;
 

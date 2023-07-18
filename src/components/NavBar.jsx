@@ -145,7 +145,6 @@ const IcoButton = styled(IconButton)`
   width: 55px;
   height: 55px;
   border-radius: 5px 20px;
-  background-color: #555555 !important;
 
   &:hover {
     background-color: #f71971 !important;
