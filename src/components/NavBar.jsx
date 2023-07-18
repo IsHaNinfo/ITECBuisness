@@ -87,7 +87,12 @@ const NavBar = (props) => {
             {navItems.map((item) => (
               <HoverButton
                 key={item}
-                sx={{ color: "#000000", mr: "45px", width: "100px" }}
+                sx={{
+                  color: "#2a2929",
+                  mr: "45px",
+                  width: "100px",
+                  fontWeight: "bold",
+                }}
                 onClick={() => handleNavigation(item)}
               >
                 {item}
@@ -139,11 +144,13 @@ const IcoButton = styled(IconButton)`
   margin-left: 25px;
   width: 55px;
   height: 55px;
-  border-radius: 0px 20px;
+  border-radius: 5px 20px;
+  background-color: #555555 !important;
+
   &:hover {
     background-color: #f71971 !important;
     border-radius: 0px 20px;
   }
 `;
-IconButton;
+
 export default NavBar;

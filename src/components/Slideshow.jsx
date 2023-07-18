@@ -26,36 +26,49 @@ const Slideshow = () => {
     {
       src: "/images/Office.png",
       alt: "Slide 1",
-      buttonLabel: "Button 1",
-      buttonColor: "rgb(247, 25, 113) !important",
+      buttonLabel: "Read More",
+      buttonColor: "rgb(247, 25, 113)",
+      Title: "Best Solution Provider",
+      Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       src: "/images/Office2.jpg",
       alt: "Slide 2",
-      buttonLabel: "Button 2",
-      buttonColor: "#4f7cff",
+      buttonLabel: "Read More",
+      buttonColor: "rgb(247, 25, 113)",
+      Title: "Outstanding Innovation services",
+      Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       src: "/images/Office3.jpeg",
       alt: "Slide 3",
-      buttonLabel: "Button 3",
-      buttonColor: "#3bea9e",
+      buttonLabel: "Read More",
+      buttonColor: "rgb(247, 25, 113)",
+      Title: "Modern Techonologies",
+      Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
   ];
 
   return (
-    <StyledCarousel
+    <Carousel
       showThumbs={false}
       selectedItem={activeIndex}
       onChange={handleSlideChange}
       autoPlay
       interval={5000}
       infiniteLoop
-      transitionTime={500}
+      transitionTime={800}
     >
       {images.map((image, index) => (
         <StyledSlide key={index}>
-          <StyledImage src={image.src} alt={image.alt} />
+          <StyledImageContainer>
+            <StyledImage src={image.src} alt={image.alt} />
+            <StyledOverlay />
+            <StyledTitle active={index === activeIndex}>
+              {image.Title}
+            </StyledTitle>
+            <StyledText active={index === activeIndex}>{image.Text}</StyledText>
+          </StyledImageContainer>
           <StyledButton
             onClick={handleButtonClick}
             style={{
@@ -67,7 +80,7 @@ const Slideshow = () => {
           </StyledButton>
         </StyledSlide>
       ))}
-    </StyledCarousel>
+    </Carousel>
   );
 };
 
@@ -75,30 +88,98 @@ const StyledSlide = styled("div")`
   position: relative;
 `;
 
+const StyledImageContainer = styled("div")`
+  position: relative;
+`;
+
 const StyledImage = styled("img")`
   width: 100%;
-  height: 700px;
+  height: 100%;
   object-fit: cover;
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    height: 500px;
+  }
+`;
+
+const StyledOverlay = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
+`;
+
+const StyledTitle = styled("div")`
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  margin-top: 25px;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+  animation: ${({ active }) =>
+    active ? "slideDown 1s ease-in-out forwards" : "none"};
+
+  @keyframes slideDown {
+    0% {
+      top: -100%;
+    }
+    100% {
+      top: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 28px;
+    top: 30%;
+  }
+`;
+
+const StyledText = styled("div")`
+  position: absolute;
+  bottom: -190%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  animation: ${({ active }) =>
+    active ? "slideUp 1s ease-in-out forwards" : "none"};
+
+  @keyframes slideUp {
+    0% {
+      bottom: -10%;
+    }
+    100% {
+      bottom: 55%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+    bottom: 30%;
+  }
 `;
 
 const StyledButton = styled("button")`
   position: absolute;
-  bottom: 20px;
+  bottom: 390px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   color: #ffffff;
+  height: 65px;
   cursor: pointer;
   &:hover {
-    background-color: #f71971 !important;
+    background-color: #464646 !important;
     border-radius: 0px 20px;
   }
-`;
-
-const StyledCarousel = styled(Carousel)`
-  height: 200px; /* Set your desired height */
 `;
 
 export default Slideshow;
