@@ -11,7 +11,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
@@ -34,9 +34,8 @@ const NavBar = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <img src="/images/Logo.png" alt="logo" />
+
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -73,16 +72,9 @@ const NavBar = (props) => {
           >
             <MenuIcon />
           </IcoButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "block", color: "#000000" },
-            }}
-          >
-            MUI
-          </Typography>
+          <Grid sx={{ width: "100px" }}>
+            <img src="/images/Logo.png" alt="logo" />
+          </Grid>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <HoverButton
