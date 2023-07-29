@@ -33,9 +33,14 @@ const NavBar = (props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img src="/images/Logo.png" alt="logo" />
-
+    <Box onClick={handleDrawerToggle} sx={{}}>
+      <Box sx={{ flexGrow: 1, mt: "20px", mr: "40px" }}>
+        <img
+          src="/images/Logo.png"
+          alt="logo"
+          style={{ width: "300px", height: "auto" }}
+        />
+      </Box>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -72,9 +77,13 @@ const NavBar = (props) => {
           >
             <MenuIcon />
           </IcoButton>
-          <Grid sx={{ width: "100px" }}>
-            <img src="/images/Logo.png" alt="logo" />
-          </Grid>
+          <Box sx={{ flexGrow: 1, textAlign: "left", mt: "20px", mb: "20px" }}>
+            <img
+              src="/images/Logo.png"
+              alt="logo"
+              style={{ width: "350px", height: "auto" }}
+            />
+          </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <HoverButton
