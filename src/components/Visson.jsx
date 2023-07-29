@@ -2,28 +2,14 @@ import React from "react";
 import { styled } from "@mui/system";
 import { Grid, Typography } from "@mui/material";
 
-const AboutUs = () => {
+const Visson = () => {
   return (
     <div>
       <MainCard>
-        <Grid>
-          <Title>About Us</Title>
-        </Grid>
         <MainMisson>
-          <StyleCard>
-            <Misson>Our Mission</Misson>
-            <MissonText>
-              "Our mission is to empower businesses through innovative
-              technology solutions, delivering exceptional value and
-              transforming the way they operate. We strive to provide
-              cutting-edge IT services and support, helping our clients achieve
-              their goals, enhance productivity, and stay ahead in today's
-              rapidly evolving digital landscape."
-            </MissonText>
-          </StyleCard>
           <StyleImage>
             <img
-              src="/images/Misson.jpg"
+              src="/images/Vison.jpeg"
               alt="mission"
               style={{
                 width: "100%",
@@ -36,16 +22,23 @@ const AboutUs = () => {
             />
             <AnimatedBorder />
           </StyleImage>
+          <StyleCard>
+            <Misson>Our Vision</Misson>
+            <MissonText>
+              ""Transforming Tech, Empowering Growth: Our vision is to redefine
+              how technology shapes businesses and individuals. Through
+              innovative IT solutions, we empower organizations to maximize
+              their potential, embrace a digital-first mindset, and achieve
+              streamlined success. Committed to excellence and
+              customer-centricity, we aspire to be the global partner driving
+              growth towards a brighter digital future."
+            </MissonText>
+          </StyleCard>
         </MainMisson>
       </MainCard>
     </div>
   );
 };
-
-const Title = styled(Typography)`
-  font-size: 60px;
-  margin-left: 30px;
-`;
 
 const Misson = styled(Typography)`
   font-size: 30px;
@@ -65,7 +58,6 @@ const MissonText = styled(Typography)`
 const StyleCard = styled(Grid)`
   width: 400px;
   height: 400px;
-  margin-top: 35px;
   margin-left: 30px;
   align-items: center;
 `;
@@ -73,7 +65,7 @@ const StyleCard = styled(Grid)`
 const StyleImage = styled(Grid)`
   width: 400px;
   height: 400px;
-  margin-left: 290px;
+  margin-left: 200px;
   margin-top: 50px;
   align-items: center;
   border-radius: 40px 40px;
@@ -102,4 +94,4 @@ const MainCard = styled(Grid)`
   margin-bottom: 125px;
 `;
 
-export default AboutUs;
+export default Visson;

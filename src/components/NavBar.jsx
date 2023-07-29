@@ -77,7 +77,15 @@ const NavBar = (props) => {
           >
             <MenuIcon />
           </IcoButton>
-          <Box sx={{ flexGrow: 1, textAlign: "left", mt: "20px", mb: "20px" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              textAlign: "left",
+              mt: "20px",
+              mb: "20px",
+              cursor: "pointer",
+            }}
+          >
             <img
               src="/images/Logo.png"
               alt="logo"
@@ -128,7 +136,7 @@ const NavBar = (props) => {
 
 const HoverButton = styled(Button)`
   &:hover {
-    background-color: #f71971 !important;
+    background-color: #01a4ff !important;
     border-radius: 1px 20px;
     height: 46px;
   }
@@ -136,7 +144,7 @@ const HoverButton = styled(Button)`
 
 const ListButton = styled(ListItemButton)`
   &:hover {
-    background-color: #f71971 !important;
+    background-color: #01a4ff !important;
     border-radius: 0px 20px;
   }
 `;
@@ -148,7 +156,7 @@ const IcoButton = styled(IconButton)`
   border-radius: 5px 20px;
 
   &:hover {
-    background-color: #f71971 !important;
+    background-color: #01a4ff !important;
     border-radius: 0px 20px;
   }
 `;

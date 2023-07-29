@@ -1,6 +1,7 @@
 import AboutUs from "./AboutUs";
 import NavBar from "./NavBar";
 import Slideshow from "./SlideShow";
+import Visson from "./Visson";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <NavBar />
       <Slideshow />
       <AboutUs />
+      <Visson />
     </div>
   );
 };

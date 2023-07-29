@@ -27,7 +27,7 @@ const Slideshow = () => {
       src: "/images/Office.png",
       alt: "Slide 1",
       buttonLabel: "Read More",
-      buttonColor: "rgb(247, 25, 113)",
+      buttonColor: "#01A4FF",
       Title: "Best Solution Provider",
       Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
@@ -35,7 +35,7 @@ const Slideshow = () => {
       src: "/images/Office2.jpg",
       alt: "Slide 2",
       buttonLabel: "Read More",
-      buttonColor: "rgb(247, 25, 113)",
+      buttonColor: "#01A4FF",
       Title: "Outstanding  services",
       Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
@@ -43,7 +43,7 @@ const Slideshow = () => {
       src: "/images/Office3.jpeg",
       alt: "Slide 3",
       buttonLabel: "Read More",
-      buttonColor: "rgb(247, 25, 113)",
+      buttonColor: "#01A4FF",
       Title: "Modern Techonologies",
       Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
@@ -201,6 +201,7 @@ const StyledButton = styled("button")`
   &:hover {
     background-color: #464646 !important;
     border-radius: 0px 20px;
+    border: 1px solid #006eff;
   }
   @media only screen and (max-width: 768px) {
     bottom: 10%;
