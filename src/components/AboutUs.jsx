@@ -1,10 +1,13 @@
 import React from "react";
 import { styled } from "@mui/system";
 import { Grid, Typography } from "@mui/material";
+import Visson from "./Visson";
+import NavBar from "./NavBar";
 
 const AboutUs = () => {
   return (
     <div>
+      <NavBar />
       <MainCard>
         <Grid>
           <Title>About Us</Title>
@@ -38,6 +41,7 @@ const AboutUs = () => {
           </StyleImage>
         </MainMisson>
       </MainCard>
+      <Visson />
     </div>
   );
 };
